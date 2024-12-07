@@ -46,7 +46,7 @@ Overview
 
 This project is a text-to-speech translation application that utilizes:
 
-Text translation (using pre-trained translation models)
+Text translation (using pre-trained translation M2M100 model)
 
 Text-to-speech conversion (via Microsoft Edge TTS)
 
@@ -59,7 +59,7 @@ It allows translating text into various languages and converting it into speech.
 
 Features
 
-Translate text into multiple languages (Persian, English, French, German, Italian)
+Translate text into multiple languages (Persian, English, French, German, Italian ... .)
 
 Convert translated text to audio files and play them automatically
 
@@ -194,6 +194,158 @@ If the selected voice type is unavailable, the default voice (Persian) will be u
 
 کاربر نوع زبان گفتار را اشتباه انتخاب کرده 
 صدایی که پخش می شود: سلام
+=========================================================================================================================================================================================================
+main.py
+
+Overview
+
+This project is a simple and efficient multilingual translation tool built using:
+
+Hugging Face Transformers (M2M100 model for multilingual translation)
+
+Langdetect (for language detection)
+
+
+The application automatically detects the source language of the input text and translates it into the desired target language using the M2M100 translation model.
+
+
+---
+
+Features
+
+Automatic Language Detection: Detects the source language of the input text using langdetect.
+
+Multilingual Translation: Supports translation between multiple languages.
+
+Hugging Face Integration: Utilizes the M2M100 model for state-of-the-art translation.
+
+
+
+---
+
+Requirements
+
+Dependencies
+
+Install the required Python libraries:
+
+pip install transformers langdetect torch
+
+Model Setup
+
+Download the M2M100 model and place it in the directory specified in the code:
+
+E:\University\master\mbaheseVijeh\project_AI\Translate_\Translate_Models\models
+
+
+---
+
+How to Use
+
+Running the Script
+
+1. Clone the repository:
+
+git clone <repository-url>
+cd <repository-folder>
+
+
+2. Run the script:
+
+python <script_name>.py
+
+
+
+Input
+
+Enter the target language code (e.g., en for English, fr for French, etc.).
+
+Provide the text to translate.
+
+
+Output
+
+The translated text will be displayed in the console.
+
+
+
+---
+
+Code Overview
+
+Main Components
+
+1. Translator Class:
+
+Loads the M2M100 model and tokenizer.
+
+Detects the source language of the text.
+
+Translates the text into the target language.
+
+
+
+2. get_translation Function:
+
+Simplifies the translation process by initializing the Translator class and returning the translated text.
+
+
+
+3. Script Execution:
+
+Prompts the user to input the target language and text.
+
+Displays the translation.
+
+
+
+
+
+---
+
+Example
+
+Input:
+
+Target Language: en
+Text: Bonjour tout le monde.
+
+Output:
+
+Translation: Hello everyone.
+
+
+---
+
+Customization
+
+Model Path: Update the model_path variable to point to the directory where your M2M100 model is stored.
+
+Target Language: Add or modify language codes supported by the M2M100 model.
+
+
+
+---
+
+Error Handling
+
+Potential Issues
+
+1. Language Detection Error:
+
+If langdetect fails, ensure the input text is long enough for reliable detection.
+
+
+
+2. Model Path Error:
+
+Verify that the M2M100 model exists at the specified model_path.
+
+
+
+3. Unsupported Language:
+
+Check if the target language is supported by the M2M100 model.
 
 
 =======================================================================================================================================================================================================================
@@ -235,6 +387,10 @@ transformers: برای بارگذاری مدل SpeechT5 و پردازشگر آن
 torchaudio: برای بارگذاری و پردازش فایل‌های صوتی
 
 
+Contact
 
+For any questions or suggestions:
+
+Email: mahshid.arjmandi.iau@gmail.com
 
 
