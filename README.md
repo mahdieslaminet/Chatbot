@@ -135,7 +135,7 @@ Speech: A class to handle translation and speech output processes
 
 ---
 
-Examples
+**Examples**
 
 Input:
 
