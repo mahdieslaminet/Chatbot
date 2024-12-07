@@ -83,7 +83,7 @@ Required libraries:
 pip install edge-tts nest_asyncio pygame langdetect
 
 Translation models located in the path:
-E:\University\master\mbaheseVijeh\project_AI\Translate_\Translate_Models\models
+(https://huggingface.co/facebook/m2m100_418M/tree/main)
 
 
 
@@ -243,7 +243,7 @@ Model Setup
 
 Download the M2M100 model and place it in the directory specified in the code:
 
-E:\University\master\mbaheseVijeh\project_AI\Translate_\Translate_Models\models
+https://huggingface.co/facebook/m2m100_418M/tree/main
 
 
 ---
