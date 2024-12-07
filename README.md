@@ -40,9 +40,9 @@
 
 ===============================================================================
 
-Text-to-Speech Translation
+**Text-to-Speech Translation**
 
-Overview
+**Overview**
 
 This project is a text-to-speech translation application that utilizes:
 
@@ -57,7 +57,7 @@ It allows translating text into various languages and converting it into speech.
 
 ---
 
-Features
+**Features**
 
 Translate text into multiple languages (Persian, English, French, German, Italian ... .)
 
@@ -73,7 +73,7 @@ Download the generated audio file to the Downloads folder
 
 ---
 
-Requirements
+**Requirements**
 
 To run this project, you need:
 
@@ -90,7 +90,7 @@ E:\University\master\mbaheseVijeh\project_AI\Translate_\Translate_Models\models
 
 ---
 
-How to Use
+**How to Use**
 
 Run the Application
 
@@ -121,7 +121,7 @@ An audio file named output_File.mp3 will be generated, played automatically, and
 
 ---
 
-Project Structure
+**Project Structure**
 
 main.py: The main script to execute the application
 
@@ -158,7 +158,7 @@ Output:
 
 ---
 
-Error Handling
+**Error Handling**
 
 Possible Issues:
 
@@ -196,9 +196,9 @@ If the selected voice type is unavailable, the default voice (Persian) will be u
 صدایی که پخش می شود: سلام
 
 =========================================================================================================================================================================================================
-main.py
+**main.py**
 
-Overview
+**Overview**
 
 This project is a simple and efficient multilingual translation tool built using:
 
@@ -212,7 +212,7 @@ The application automatically detects the source language of the input text and 
 
 ---
 
-Features
+**Features**
 
 Automatic Language Detection: Detects the source language of the input text using langdetect.
 
@@ -224,7 +224,7 @@ Hugging Face Integration: Utilizes the M2M100 model for state-of-the-art transla
 
 ---
 
-Requirements
+**Requirements**
 
 Dependencies
 
@@ -241,7 +241,7 @@ E:\University\master\mbaheseVijeh\project_AI\Translate_\Translate_Models\models
 
 ---
 
-How to Use
+**How to Use**
 
 Running the Script
 
@@ -272,7 +272,7 @@ The translated text will be displayed in the console.
 
 ---
 
-Code Overview
+**Code Overview**
 
 Main Components
 
@@ -318,7 +318,7 @@ Translation: Hello everyone.
 
 ---
 
-Customization
+**Customization**
 
 Model Path: Update the model_path variable to point to the directory where your M2M100 model is stored.
 
@@ -328,7 +328,7 @@ Target Language: Add or modify language codes supported by the M2M100 model.
 
 ---
 
-Error Handling
+**Error Handling**
 
 Potential Issues
 
@@ -387,8 +387,9 @@ transformers: برای بارگذاری مدل SpeechT5 و پردازشگر آن
 
 torchaudio: برای بارگذاری و پردازش فایل‌های صوتی
 
+=============================================================================================================
 
-Contact
+**Contact**
 
 For any questions or suggestions:
 
