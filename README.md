@@ -447,6 +447,147 @@ The project is organized as follows:
 ├── anonymize_voice_Main.py                   # Main entry point to process and convert audio
 
 
+## Voice Conversion and X-Vector Extraction
+
+This repository contains two main scripts for voice conversion and X-vector extraction. The first script extracts X-vectors (speaker embeddings) from audio files, and the second script uses these embeddings to convert speech from one speaker to another using the SpeechT5 model.
+
+---
+
+**Overview**
+
+1. X-Vector Extraction:
+
+The Xvector model extracts speaker embeddings from input audio files. These embeddings are useful for speaker verification, identification, and voice conversion tasks.
+
+
+
+2. Voice Conversion:
+
+Uses SpeechT5 to convert a source speaker's audio into a target speaker's voice using pre-trained embeddings.
+
+
+
+
+
+---
+
+**Requirements**
+
+To run the scripts, you need the following Python packages:
+
+torch
+
+librosa
+
+numpy
+
+sounddevice
+
+pydub
+
+transformers
+
+speechbrain
+
+torchaudio
+
+
+
+---
+
+**Installation**
+
+1. Clone the repository:
+
+git clone https://github.com/your-username/voice-conversion.git
+cd voice-conversion
+
+
+2. Install dependencies:
+
+pip install -r requirements.txt
+
+
+3. Ensure you have FFmpeg installed for audio processing with pydub.
+
+
+
+
+---
+
+**Usage**
+
+X-Vector Extraction
+
+1. Edit the script to set the audio_path variable to the path of your audio file:
+
+audio_path = "path/to/your/audio/file.flac"
+
+
+2. Run the script:
+
+python xvector_extraction.py
+
+
+3. The extracted X-vector will be saved as xvector.npy.
+
+
+
+
+---
+
+**Voice Conversion**
+
+1. Replace the path to your input audio file and target speaker embedding in the predict function:
+
+predict(audio="path/to/source_audio.flac")
+
+
+2. Run the script:
+
+python voice_conversion.py
+
+
+3. Listen to the converted audio.
+
+
+
+
+---
+
+**File Descriptions**
+
+xvector.py
+
+This script:
+
+Extracts MFCC features from input audio.
+
+Passes the features through a TDNN-based X-vector model.
+
+Saves the X-vector as a .npy file.
+
+
+voice_conversion.py
+
+This script:
+
+Loads a pre-trained SpeechT5 model from Hugging Face.
+
+Uses extracted X-vectors for target speaker embeddings.
+
+Converts the source audio to match the target speaker's voice.
+
+
+
+---
+
+**Acknowledgements**
+
+SpeechBrain for the TDNN-based X-vector implementation.
+
+Hugging Face for the SpeechT5 pre-trained models.
+
 
 Feel free to open issues for suggestions or bug reports.
 
