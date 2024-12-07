@@ -351,6 +351,97 @@ Check if the target language is supported by the M2M100 model.
 
 =======================================================================================================================================================================================================================
 
+# Audio Anonymization and Conversion Toolkit
+
+A comprehensive toolset designed for audio file conversion, voice anonymization, and playback, focusing on seamless integration with Python-based audio processing libraries.
+
+## Features
+- **Audio Conversion**: Convert between MP3 and WAV formats.
+- **Voice Anonymization**: Apply pitch shifting for anonymizing audio recordings.
+- **Playback Support**: Play anonymized audio files in MP3 format using `pygame`.
+- **Modular Design**: Extendable and reusable code structure for developers.
+
+## Requirements
+To run this project, ensure that you have the following libraries installed:
+
+- Python 3.7 or higher
+- Required libraries:
+  - `librosa` (for audio processing)
+  - `soundfile` (for reading and writing WAV files)
+  - `pydub` (for audio format conversion)
+  - `pygame` (for audio playback)
+
+You can install the necessary dependencies by running:
+
+```bash
+pip install -r requirements.txt
+
+Installation and Setup
+
+1. Clone the Repository:
+
+git clone https://github.com/yourusername/audio-anonymization-toolkit.git
+cd audio-anonymization-toolkit
+
+
+2. Install Dependencies: Create and activate a virtual environment, then install the required dependencies:
+
+pip install -r requirements.txt
+
+
+3. Running the Project: To start processing audio files, run the following command:
+
+python main.py
+
+
+
+**Usage**
+
+Convert and Anonymize Audio
+
+You can easily convert and anonymize MP3 files as follows:
+
+from main import process_audio
+
+# Input and output MP3 file paths
+input_mp3_file = "input_file.mp3"
+output_mp3_file = "anonymized_output.mp3"
+
+# Process the audio
+process_audio(input_mp3_file, output_mp3_file)
+
+Play Anonymized Audio
+
+To play the output audio, you can use the play_audio.py script:
+
+python play_audio.py
+
+Customizing the Anonymization
+
+You can modify the pitch_shift_steps parameter in the anonymize_voice function to adjust the degree of anonymization by pitch shifting.
+
+def anonymize_voice(input_file, output_file, pitch_shift_steps=4):
+    """Applies pitch shifting to anonymize the audio."""
+    # Customize the pitch shift by changing the pitch_shift_steps
+
+**Project Structure**
+
+The project is organized as follows:
+
+├── audio_anonymization.py    # Module responsible for voice anonymization
+├── audio_conversion.py       # Module for converting between MP3 and WAV
+├── playing_anonymized_sound.py             # Module to handle audio playback
+├── requirements.txt          # List of required Python packages
+├── anonymize_voice_Main.py                   # Main entry point to process and convert audio
+
+Running Tests
+
+To verify the functionality of the project, run the main.py script, which will handle conversion, anonymization, and playback:
+
+python anonymize_voice_Main.py
+
+==============================================================================================
+
 نحوه عملکرد فایل VoiceConversion
 
 تبدیل صدا با استفاده از مدل SpeechT5-vc
@@ -394,5 +485,9 @@ torchaudio: برای بارگذاری و پردازش فایل‌های صوتی
 For any questions or suggestions:
 
 Email: mahshid.arjmandi.iau@gmail.com
+
+**License**
+
+This project is licensed under the MIT License. See the LICENSE file for more information.
 
 
