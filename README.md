@@ -362,13 +362,13 @@ Check if the target language is supported by the M2M100 model.
 
 A comprehensive toolset designed for audio file conversion, voice anonymization, and playback, focusing on seamless integration with Python-based audio processing libraries.
 
-## Features
+**Features**
 - **Audio Conversion**: Convert between MP3 and WAV formats.
 - **Voice Anonymization**: Apply pitch shifting for anonymizing audio recordings.
 - **Playback Support**: Play anonymized audio files in MP3 format using `pygame`.
 - **Modular Design**: Extendable and reusable code structure for developers.
 
-## Requirements
+**Requirements**
 To run this project, ensure that you have the following libraries installed:
 
 - Python 3.7 or higher
@@ -410,11 +410,11 @@ You can easily convert and anonymize MP3 files as follows:
 
 from main import process_audio
 
-# Input and output MP3 file paths
+**Input and output MP3 file paths**
 input_mp3_file = "input_file.mp3"
 output_mp3_file = "anonymized_output.mp3"
 
-# Process the audio
+**Process the audio**
 process_audio(input_mp3_file, output_mp3_file)
 
 Play Anonymized Audio
@@ -622,7 +622,7 @@ predict(audio="path/to/source_audio.flac")
 
 ---
 
-File Structure
+**File Structure**
 
 .
 ├── xvector_extraction.py   # Script for extracting X-vectors
