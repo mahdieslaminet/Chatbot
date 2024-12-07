@@ -626,8 +626,11 @@ File Structure
 
 .
 ├── xvector_extraction.py   # Script for extracting X-vectors
+
 ├── voice_conversion.py     # Script for voice conversion
+
 ├── requirements.txt        # List of required Python libraries
+
 └── README.md               # Project documentation
 
 
