@@ -40,7 +40,7 @@
 
 ===============================================================================
 
-**Text-to-Speech Translation**
+# Text-to-Speech Translation
 
 **Overview**
 
@@ -196,7 +196,7 @@ If the selected voice type is unavailable, the default voice (Persian) will be u
 
 =========================================================================================================================================================================================================
 
-**Multilingual Translation**
+# Multilingual Translation
 
 **Overview**
 
