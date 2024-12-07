@@ -373,7 +373,7 @@ To run this project, ensure that you have the following libraries installed:
 
 You can install the necessary dependencies by running:
 
-```bash
+
 pip install -r requirements.txt
 
 Installation and Setup
@@ -391,103 +391,8 @@ pip install -r requirements.txt
 
 3. Running the Project: To start processing audio files, run the following command:
 
-python main.py
-
-
-
-**Usage**
-
-Convert and Anonymize Audio
-
-You can easily convert and anonymize MP3 files as follows:
-
-from main import process_audio
-
-# Input and output MP3 file paths
-input_mp3_file = "input_file.mp3"
-output_mp3_file = "anonymized_output.mp3"
-
-# Process the audio
-process_audio(input_mp3_file, output_mp3_file)
-
-Play Anonymized Audio
-
-To play the output audio, you can use the play_audio.py script:
-
-python play_audio.py
-
-Customizing the Anonymization
-
-You can modify the pitch_shift_steps parameter in the anonymize_voice function to adjust the degree of anonymization by pitch shifting.
-
-def anonymize_voice(input_file, output_file, pitch_shift_steps=4):
-    """Applies pitch shifting to anonymize the audio."""
-    # Customize the pitch shift by changing the pitch_shift_steps
-
-**Project Structure**
-
-The project is organized as follows:
-
-├── audio_anonymization.py    # Module responsible for voice anonymization
-├── audio_conversion.py       # Module for converting between MP3 and WAV
-├── playing_anonymized_sound.py             # Module to handle audio playback
-├── requirements.txt          # List of required Python packages
-├── anonymize_voice_Main.py                   # Main entry point to process and convert audio
-
-Running Tests
-
-To verify the functionality of the project, run the main.py script, which will handle conversion, anonymization, and playback:
-
 python anonymize_voice_Main.py
 
-==============================================================================================
 
-نحوه عملکرد فایل VoiceConversion
-
-تبدیل صدا با استفاده از مدل SpeechT5-vc
-
-این پروژه از مدل SpeechT5-vc برای تبدیل صدای یک گوینده به صدای گوینده دیگر استفاده می‌کند. مدل SpeechT5-vc مایکروسافت یک مدل پیشرفته برای تبدیل گفتار به گفتار است که می‌تواند صدای گوینده منبع را به صدای گوینده هدف تبدیل کند.همچنین، در این پروژه از xvector برای استخراج ویژگی‌های صدای گوینده استفاده می‌شود که به مدل کمک می‌کند صدای گوینده هدف را شبیه‌سازی کند.
-
-ویژگی‌ها
-
-تبدیل صدای گوینده منبع به صدای گوینده هدف
-
-استفاده از xvector برای استخراج ویژگی‌های صدای گوینده
-
-پشتیبانی از فرمت‌های صوتی مختلف
-
-پخش صدای تبدیل‌شده به صورت آنی
-
-استفاده از مدل SpeechT5 مایکروسافت برای پردازش صدا
-
-نیازمندی‌ها
-
-برای اجرای این پروژه به کتابخانه‌های زیر نیاز دارید:
-
-librosa: برای پردازش صوت
-
-numpy: برای محاسبات عددی
-
-torch: برای مدل‌های PyTorch
-
-pydub: برای دستکاری فایل‌های صوتی
-
-sounddevice: برای پخش صدا
-
-transformers: برای بارگذاری مدل SpeechT5 و پردازشگر آن
-
-torchaudio: برای بارگذاری و پردازش فایل‌های صوتی
-
-=============================================================================================================
-
-**Contact**
-
-For any questions or suggestions:
-
-Email: mahshid.arjmandi.iau@gmail.com
-
-**License**
-
-This project is licensed under the MIT License. See the LICENSE file for more information.
 
 
