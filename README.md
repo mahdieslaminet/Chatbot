@@ -434,14 +434,18 @@ def anonymize_voice(input_file, output_file, pitch_shift_steps=4):
 **Project Structure**
 
 The project is organized as follows:
-
+'''bash
 ├── audio_anonymization.py    # Module responsible for voice anonymization
+
 ├── audio_conversion.py       # Module for converting between MP3 and WAV
+
 ├── playing_anonymized_sound.py             # Module to handle audio playback
+
 ├── requirements.txt          # List of required Python packages
+
 ├── anonymize_voice_Main.py                   # Main entry point to process and convert audio
 
-
+bash'''
 
 Feel free to open issues for suggestions or bug reports.
 
