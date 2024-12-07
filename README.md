@@ -40,10 +40,132 @@
 
 ===============================================================================
 
+Text-to-Speech Translation
+
+Overview
+
+This project is a text-to-speech translation application that utilizes:
+
+Text translation (using pre-trained translation models)
+
+Text-to-speech conversion (via Microsoft Edge TTS)
+
+Language detection
+It allows translating text into various languages and converting it into speech.
 
 
-نحوه عملکرد فایل 
-textToSpeech
+
+---
+
+Features
+
+Translate text into multiple languages (Persian, English, French, German, Italian)
+
+Convert translated text to audio files and play them automatically
+
+Automatically detect the input text language
+
+Choose the target language for speech output
+
+Download the generated audio file to the Downloads folder
+
+
+
+---
+
+Requirements
+
+To run this project, you need:
+
+Python 3.8+
+
+Required libraries:
+
+pip install edge-tts nest_asyncio pygame langdetect
+
+Translation models located in the path:
+E:\University\master\mbaheseVijeh\project_AI\Translate_\Translate_Models\models
+
+
+
+---
+
+How to Use
+
+Run the Application
+
+1. Clone the repository:
+
+git clone <repository-url>
+cd <repository-folder>
+
+
+2. Run the main.py file:
+
+python main.py
+
+
+
+Input
+
+Enter text as input (e.g., "Elle regarde la télévision tous les soirs.").
+
+
+Output
+
+The translated text in your chosen language.
+
+An audio file named output_File.mp3 will be generated, played automatically, and saved in the Downloads folder.
+
+
+
+---
+
+Project Structure
+
+main.py: The main script to execute the application
+
+LanguageSelector: A class to select the target speech language
+
+LanguageDetector: A class to detect the language of the input text
+
+TextToSpeechApp: A class to generate and manage the audio file
+
+Speech: A class to handle translation and speech output processes
+
+
+
+---
+
+Examples
+
+Input:
+
+Elle regarde la télévision tous les soirs.
+
+Output:
+
+1. Detected language: French
+
+
+2. Translated text to Persian: او هر شب تلویزیون تماشا می‌کند.
+
+
+3. Audio file generated and played automatically.
+
+
+
+
+---
+
+Error Handling
+
+Possible Issues:
+
+If the translation model is missing from the specified path, the program will not run.
+
+If the selected voice type is unavailable, the default voice (Persian) will be used.
+
 
 
 
