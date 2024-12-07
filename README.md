@@ -96,14 +96,13 @@ Run the Application
 
 1. Clone the repository:
 
-git clone <repository-url>
-cd <repository-folder>
+git clone 
+cd 
 
 
-2. Run the main.py file:
+2. Run the textToSpeech.py file:
 
-python main.py
-
+python textToSpeech.py
 
 
 Input
@@ -196,7 +195,7 @@ If the selected voice type is unavailable, the default voice (Persian) will be u
 صدایی که پخش می شود: سلام
 
 =========================================================================================================================================================================================================
-**main.py**
+**Multilingual Translation**
 
 **Overview**
 
@@ -247,13 +246,13 @@ Running the Script
 
 1. Clone the repository:
 
-git clone <repository-url>
-cd <repository-folder>
+git clone 
+cd 
 
 
 2. Run the script:
 
-python <script_name>.py
+python main.py
 
 
 
