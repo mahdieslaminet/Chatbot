@@ -446,50 +446,70 @@ The project is organized as follows:
 
 ├── anonymize_voice_Main.py                   # Main entry point to process and convert audio
 
+**Running Tests**
 
-## Voice Conversion and X-Vector Extraction
+To verify the functionality of the project, run the main.py script, which will handle conversion, anonymization, and playback:
 
-This repository contains two main scripts for voice conversion and X-vector extraction. The first script extracts X-vectors (speaker embeddings) from audio files, and the second script uses these embeddings to convert speech from one speaker to another using the SpeechT5 model.
+python anonymize_voice_main.py
 
----
+## X-vector Extraction and Voice Conversion with SpeechT5
 
 **Overview**
 
-1. X-Vector Extraction:
+This project consists of two main components:
 
-The Xvector model extracts speaker embeddings from input audio files. These embeddings are useful for speaker verification, identification, and voice conversion tasks.
+1. X-vector Extraction: Extract speaker embeddings (X-vectors) from an audio file using a neural network-based approach.
 
+
+2. Voice Conversion: Use Microsoft’s SpeechT5 model to perform voice conversion by mapping the characteristics of a target speaker’s voice onto the audio of a source speaker.
+
+
+
+This repository provides Python scripts for both functionalities.
+
+
+---
+
+**Features**
+
+1. X-vector Extraction:
+
+Extract speaker embeddings (X-vectors) from audio files using a custom implementation of a TDNN (Time Delay Neural Network).
+
+The embeddings can be saved as .npy files for later use in tasks like speaker verification or voice conversion.
 
 
 2. Voice Conversion:
 
-Uses SpeechT5 to convert a source speaker's audio into a target speaker's voice using pre-trained embeddings.
+Perform voice conversion using Microsoft's SpeechT5.
 
+Uses pre-trained models from the Hugging Face Transformers library for both feature extraction and vocoding.
 
+Allows specifying target speaker embeddings (e.g., X-vectors) to map the voice characteristics of the target speaker onto a given audio input.
 
 
 
 ---
 
-**Requirements**
+**Prerequisites**
 
-To run the scripts, you need the following Python packages:
+Libraries Required
 
-torch
+Torch: Neural network computations.
 
-librosa
+Librosa: Audio processing and feature extraction.
 
-numpy
+NumPy: Array manipulation.
 
-sounddevice
+SpeechBrain: Neural network modules (used for CNNs and pooling).
 
-pydub
+Transformers: Access to pre-trained SpeechT5 models.
 
-transformers
+PyDub: Audio manipulation.
 
-speechbrain
+SoundDevice: Playback of generated audio.
 
-torchaudio
+TorchAudio: Audio I/O and processing.
 
 
 
@@ -499,38 +519,53 @@ torchaudio
 
 1. Clone the repository:
 
-git clone https://github.com/your-username/voice-conversion.git
-cd voice-conversion
+git clone https://github.com/Chatbot.git
+cd Chatbot
 
 
-2. Install dependencies:
+2. Install the required Python libraries:
 
-pip install -r requirements.txt
+pip install torch librosa numpy speechbrain transformers pydub sounddevice torchaudio
 
 
-3. Ensure you have FFmpeg installed for audio processing with pydub.
+3. For Windows users, ensure ffmpeg is installed for PyDub. You can download it from FFmpeg.org.
 
 
 
 
 ---
 
-**Usage**
+**X-vector Extraction**
 
-X-Vector Extraction
+The xvector_extraction.py script extracts X-vectors from audio files. X-vectors represent speaker-specific embeddings and are commonly used in tasks like speaker verification or voice conversion.
 
-1. Edit the script to set the audio_path variable to the path of your audio file:
+Steps:
 
-audio_path = "path/to/your/audio/file.flac"
+1. Prepare the Audio File:
+
+Ensure the audio file is in .wav or .flac format.
 
 
-2. Run the script:
+
+2. Run the Script:
 
 python xvector_extraction.py
 
 
-3. The extracted X-vector will be saved as xvector.npy.
+3. Output:
 
+The extracted X-vector will be saved as a .npy file in the specified output path.
+
+
+
+
+Key Functions:
+
+extract_mfcc(audio_path, sr=16000, n_mfcc=40): Extracts MFCC features from the audio file.
+
+Xvector: A custom TDNN model for generating X-vectors. Includes statistical pooling and linear transformations.
+
+save_xvector(xvector, output_path="xvector.npy"): Saves the extracted X-vector as a NumPy .npy file.
 
 
 
@@ -538,58 +573,96 @@ python xvector_extraction.py
 
 **Voice Conversion**
 
-1. Replace the path to your input audio file and target speaker embedding in the predict function:
+The voice_conversion.py script performs voice conversion using Microsoft’s SpeechT5 model. It converts the source speaker's audio into the voice of the target speaker by leveraging X-vectors or pre-defined speaker embeddings.
 
-predict(audio="path/to/source_audio.flac")
+Steps:
+
+1. Prepare the Audio Files:
+
+Provide a source audio file and a target speaker embedding (X-vector .npy file).
 
 
-2. Run the script:
+
+2. Run the Script:
 
 python voice_conversion.py
 
 
-3. Listen to the converted audio.
+3. Output:
+
+The converted audio will be played directly or saved as a file.
 
 
 
 
----
+**Key Functions:**
 
-**File Descriptions**
+process_audio(sampling_rate, waveform): Processes the audio (mono conversion, resampling, etc.) for compatibility with the SpeechT5 model.
 
-xvector.py
+predict(audio, mic_audio=None): Loads the source audio, processes it, and generates the converted speech using the SpeechT5 model.
 
-This script:
-
-Extracts MFCC features from input audio.
-
-Passes the features through a TDNN-based X-vector model.
-
-Saves the X-vector as a .npy file.
-
-
-voice_conversion.py
-
-This script:
-
-Loads a pre-trained SpeechT5 model from Hugging Face.
-
-Uses extracted X-vectors for target speaker embeddings.
-
-Converts the source audio to match the target speaker's voice.
+load_audio(file_path): Loads and returns the waveform and sampling rate of the input audio.
 
 
 
 ---
 
-**Acknowledgements**
+**Sample Use Cases**
 
-SpeechBrain for the TDNN-based X-vector implementation.
+Extracting X-vectors:
 
-Hugging Face for the SpeechT5 pre-trained models.
+audio_path = "path/to/source_audio.flac"
+xvector = extract_xvector(audio_path)
+save_xvector(xvector, "path/to/output/xvector.npy")
+
+Performing Voice Conversion:
+
+predict(audio="path/to/source_audio.flac")
 
 
-Feel free to open issues for suggestions or bug reports.
+---
+
+File Structure
+
+.
+├── xvector_extraction.py   # Script for extracting X-vectors
+├── voice_conversion.py     # Script for voice conversion
+├── requirements.txt        # List of required Python libraries
+└── README.md               # Project documentation
+
+
+---
+
+**Model Details**
+
+X-vector Model
+
+The model uses a Time Delay Neural Network (TDNN) architecture with:
+
+5 TDNN layers.
+
+Statistical pooling for aggregating frame-level features into utterance-level features.
+
+Final linear transformation for generating the X-vector.
+
+
+
+SpeechT5 Voice Conversion
+
+Checkpoint: Pre-trained model from Microsoft's microsoft/speecht5_vc.
+
+Vocoder: SpeechT5HifiGan is used for synthesizing high-quality speech audio.
+
+
+
+---
+**Notes**
+
+For GPU acceleration, modify the device in the Xvector class and SpeechT5 components:
+
+model = Xvector(device="cuda")
+
+Ensure your audio files are of good quality and match the input requirements (e.g., sampling rate of 16 kHz).
 
 **License**
 
