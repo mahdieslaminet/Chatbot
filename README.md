@@ -37,7 +37,7 @@ Privacy Focus: Voice anonymization ensures the security of user data.
 
 Voice Personalization: With voice conversion, the chatbot's audio responses can be customized to a desired voice.
 
-===============================================================================
+
 
 # Text-to-Speech Translation
 
@@ -201,7 +201,7 @@ If the translation model is missing from the specified path, the program will no
 
 If the selected voice type is unavailable, the default voice (Persian) will be used.
 
-=========================================================================================================================================================================================================
+
 
 # Multilingual Translation
 
@@ -356,7 +356,7 @@ Verify that the M2M100 model exists at the specified model_path.
 Check if the target language is supported by the M2M100 model.
 
 
-=======================================================================================================================================================================================================================
+
 
 # Audio Anonymization and Conversion Toolkit
 
